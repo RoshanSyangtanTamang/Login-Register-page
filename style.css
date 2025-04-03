@@ -95,8 +95,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* overflow: hidden; */
-    transition: height .3s ease;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .3s ease, height .3s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
 }
 
 .wrapper.active {
@@ -120,7 +125,13 @@ header {
 
 .wrapper .form-box.register {
     position: absolute;
+    transition: none;
     transform: translateX(450px)
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .3s ease;
+    transform: translateX(0);
 }
 
 .wrapper .close {
